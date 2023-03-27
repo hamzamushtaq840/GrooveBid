@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ReactFlagsSelect-module_selectValue__152eS {
+  color: #AAAAAA;
+  font-family: sans-serif;
+  font-weight: 700;
+  margin-left: -10px;
+}
+
+.ReactFlagsSelect-module_selectFlag__2q5gC svg {
+  width: 25px;
+}
+
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  border-color: #595959;
+  border-radius: 2px;
+}
+
+select,
+select option {
+  color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+  color: #999999;
+}
+
+/*Added for browser compatibility*/
+[hidden] {
+  display: none;
+}
+
+option:first-child {
+  color: #ccc;
+}
+
+/* Define the fill color for the SVG when the NavLink is not active */
+.nav-link svg {
+  fill: #1E1E21B2;
+  ;
+}
+
+/* Define the fill color for the SVG when the NavLink is active */
+.nav-link.active svg {
+  fill: #389668;
+}
+
+.nav-link:hover svg {
+  fill: black;
+}
+
+.nav-link.active:hover svg {
+  fill: #389668;
+}
+
+.nav-link.active h1 {
+  color: #389668;
+  font-weight: 600;
+}
+
+.modalBackground {
+  width: 100%;
+  min-width: calc(100vw - 100%);
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.modalContainer {
+  /* width: 70%; */
+  /* height: 15%; */
+  border-radius: 6px;
+  border: 1px solid #81B29A;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  animation-name: animateModal;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+.button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.buttonAnimation {
+  position: relative;
+  transition: all;
+  transition-duration: 100ms;
+}
+
+.buttonAnimation:hover {
+  top: 2px;
+}
+
+.buttonAnimation:active {
+  top: 4px;
+}
+
+.listingBackgroundImage {
+  position: relative;
+  background-image: url("./assets/ListingMainImage.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.listingBackgroundImage::before {
+  content: "";
+  /* create an empty element to use as the additional layer */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  /* set the background color with alpha */
+  z-index: 1;
+  /* make sure the layer is on top of the background image */
+}
+
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  border: 0 !important;
+  /* padding-top: 0 !important; */
+  padding-bottom: 0 !important;
+}
+
+.ReactFlagsSelect-module_selectValue__152eS {
+  padding: 0 !important;
+}
+
+.ReactFlagsSelect-module_label__27pw9 {
+  color: #000000;
+  font-weight: 500;
+  font-size: 0.75em;
+  /* background: #000; */
+  display: flex;
+  align-items: center;
+  letter-spacing: .5px;
+  padding-top: 2px;
+}
+
+.nav-link2.active {
+  background-color: white;
+  /* padding: 0.5rem 2rem; */
+  border-radius: 7px;
+  border: 0.1px solid #ccc;
+  box-shadow: 3px 4px 19px -17px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 3px 4px 19px -17px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 3px 4px 19px -17px rgba(0, 0, 0, 0.35);
+}
+
+.nav-link2.active h2 {
+  font-weight: 600;
+  color: black;
+  /* text-decoration: underline; */
+  /* padding-bottom: 2px; */
+  /* border-bottom: 2px solid #389668 */
+
+}
+
+#dotted-line {
+  border: none;
+  color: rgb(7, 189, 245);
+  margin: px 60px;
+}
+
+.div {
+  border-left: 3px dotted #C6BCBC;
+  /* height: 30px; */
+}
+
+.card {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link3.active h1 {
+  font-weight: 600;
+  color: #000000;
+  font-size: 0.875em;
+}
