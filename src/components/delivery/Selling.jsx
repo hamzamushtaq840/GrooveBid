@@ -15,7 +15,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: false,
             addressSent: false,
             address: null,
@@ -28,6 +28,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
         {
             id: '123',
@@ -41,7 +42,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: true,
             addressSent: false,
             address: null,
@@ -54,6 +55,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
         {
             id: '123',
@@ -67,7 +69,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: true,
             addressSent: true,
             address: 'Test street 54 764 45 Uppsala, Sweden',
@@ -80,6 +82,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
 
         {
@@ -94,7 +97,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: true,
             addressSent: true,
             address: 'Test street 54 764 45 Uppsala, Sweden',
@@ -107,6 +110,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
         {
             id: '123',
@@ -120,7 +124,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: true,
             addressSent: true,
             address: 'Test street 54 764 45 Uppsala, Sweden',
@@ -133,6 +137,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
         {
             id: '123',
@@ -146,7 +151,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: true,
             addressSent: true,
             address: 'Test street 54 764 45 Uppsala, Sweden',
@@ -159,6 +164,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
         {
             id: '123',
@@ -172,7 +178,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: true,
             addressSent: true,
             address: 'Test street 54 764 45 Uppsala, Sweden',
@@ -185,6 +191,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
         {
             id: '123',
@@ -198,7 +205,7 @@ const Selling = () => {
             brand: 'Discart',
             condition: 8,
             bidWonPrice: 125,
-            endTime: '02:20PM 23 OKt',
+            endTime: '23:00 - 28 Oct',
             purchaseConfirmed: true,
             addressSent: true,
             address: 'Test street 54 764 45 Uppsala, Sweden',
@@ -211,6 +218,7 @@ const Selling = () => {
             givenBuyerRating: null,
             givenSellerRating: null,
             cancelPayment: false,
+            bids: []
         },
     ]
 

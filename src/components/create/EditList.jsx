@@ -7,11 +7,29 @@ import plastic from '../../assets/plastic.svg'
 import upload from '../../assets/upload.svg'
 import { getCountryInfoByISO } from '../../utils/iso-country-currency'
 import RemoveModel from './RemoveModel'
+import Select from 'react-select'
 
-
+const options = [
+    { value: 'Annax', label: 'Annax' },
+    { value: 'Xannax', label: 'Xannax' },
+    { value: 'Trannax', label: 'Trannax' }
+]
 const userCountry = 'PK'
 const countryInfo = getCountryInfoByISO(userCountry);
-const ranges = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const ranges = [
+    { condition: 11, info: "In unopened original packaging" },
+    { condition: 10, info: "\"Mint\", no scratches/damage" },
+    { condition: 9, info: "Unused, but possibly some small scratches in print from handling/storage, marked with name/decal below to" },
+    { condition: 8, info: "Test thrown without direct damage, only light scratches" },
+    { condition: 7, info: "Barely recorded, use a few rounds without heavy nicks" },
+    { condition: 6, info: "Recorded with minor damage, but still in good condition" },
+    { condition: 5, info: "Used disc, but not wind, with some light nicks and some scratches" },
+    { condition: 4, info: "Well used disc a little wind maybe, but still usable" },
+    { condition: 3, info: "Disc at the end of its life, pressure almost worn out, wind after some decent tree/rock hits" },
+    { condition: 2, info: "The disc has cracks or is properly winded or worn" },
+    { condition: 1, info: "Larger cracks or disc's original form partially worn away" },
+    { condition: 0, info: "My dog/crocodile has chewed on it, the disc in parts and/or holes in the disc" }
+]
 
 const EditList = () => {
     const navigate = useNavigate()
@@ -114,20 +132,14 @@ const EditList = () => {
                         <div className='w-[50%] flex flex-col gap-[0.8625em] xsm:gap-[0.5625em] sm:gap-[0.5625em] mr-[0.625em]'>
                             <input name='discName'
                                 value={inputValues.discName}
-                                onChange={handleOptionalChange} type="text" className='text-[0.75em] placeholder:font-[700] pl-[7px] border-[1px] border-[#595959] xsm:h-[23px] sm:h-[23px] h-[1.938em] rounded-[2px]' placeholder='Disc Name *' />
-                            <select name='brand' value={inputValues.brand}
-                                onChange={handleOptionalChange} className="w-full text-[0.75em] xsm:pl-[7px] sm:pl-[7px] pl-[3px] font-[700] text-[#AAAAAA] border-[1px] border-[#595959]  rounded-[2px] xsm:h-[23px] sm:h-[23px] h-[1.938em] outline-none  leading-[14.63px] bg-[white]">
-                                <option disabled value="" selected hidden>Brand *</option>
-                                <option>Zara</option>
-                                <option>Gucci</option>
-                                <option>Leopard</option>
-                            </select>
+                                onChange={handleOptionalChange} type="text" className='text-[0.75em] placeholder:font-[500] pl-[7px] border-[1px] border-[#595959] xsm:h-[23px] sm:h-[23px] h-[1.938em] rounded-[2px]' placeholder='Disc Name *' />
+                            <Select className="select2 w-full text-[0.75em] font-[500] text-[#AAAAAA] rounded-[2px] outline-none  leading-[14.63px] bg-[white]" closeMenuOnScroll={true} placeholder="Brand" options={options} />
                             <input
                                 name='range'
                                 value={inputValues.range}
                                 onChange={handleOptionalChange}
                                 list="rangeOptions"
-                                className="w-full text-[0.75em] bg-white border-[1px] border-[#595959] placeholder:font-[700] pl-[7px] rounded-[2px] xsm:h-[23px] sm:h-[23px] h-[1.938em]"
+                                className="w-full text-[0.75em] bg-white border-[1px] border-[#595959] placeholder:font-[500] pl-[7px] rounded-[2px] xsm:h-[23px] sm:h-[23px] h-[1.938em]"
                                 placeholder="Range *"
                             />
                             <datalist id="rangeOptions">
@@ -140,9 +152,9 @@ const EditList = () => {
                             </datalist>
                         </div>
                         <div className="w-[50%] grid grid-cols-4 xsm:gap-x-2 sm:gap-x-2 gap-x-10 xsm:gap-y-[0.375em] sm:gap-y-[0.375em] gap-y-[0.675em]">
-                            {ranges.map((condition) => (
-                                <div key={condition} className={`flex justify-center items-center rounded-full px-[8px] py-[3px] ${inputValues.condition === condition ? 'bg-[#81b29a2f]' : ''} border border-[#595959] cursor-pointer`} onClick={() => handleCondition(condition)} >
-                                    <span className="text-[12px]">{condition}</span>
+                            {ranges.map((value, index) => (
+                                <div key={index} className={`abc flex justify-center items-center rounded-full px-[8px] py-[3px] ${inputValues.condition === value.condition ? 'bg-[#81b29a2f]' : ''} border border-[#595959] cursor-pointer`} onClick={() => handleCondition(value.condition)}>
+                                    <span className="text-[12px] absolute"><div data-title={value.info} className="helpDiv relative">{value.condition}</div></span>
                                 </div>
                             ))}
                         </div>
@@ -156,13 +168,13 @@ const EditList = () => {
                                     <img src={plastic} className="h-[20px]" alt="plastic" />
                                     <input name='plastic'
                                         value={inputValues.plastic}
-                                        onChange={handleOptionalChange} type="text" className='border rounded-[2px] w-full mr-[20px]  xsm:h-[1.25em] m:h-[1.25em] h-[1.75em] text-[.75em] placeholder:font-[700] pl-[8px]' placeholder='Plastic...' />
+                                        onChange={handleOptionalChange} type="text" className='border rounded-[2px] w-full mr-[20px]  text-[.75em] placeholder:font-[500] pl-[8px]' placeholder='Plastic...' />
                                 </div>
                                 <div className='flex w-[50%] items-center gap-[0.375em]'>
                                     <img src={grams} className="h-[20px]" alt="plastic" />
                                     <input name='grams'
                                         value={inputValues.grams}
-                                        onChange={handleOptionalChange} type="number" className='border rounded-[2px] w-[50%] xsm:h-[1.25em] m:h-[1.25em] h-[1.75em] text-[.75em] placeholder:font-[700] pl-[8px]' placeholder='Grams' />
+                                        onChange={handleOptionalChange} type="number" className='border rounded-[2px] w-[50%] text-[.75em] placeholder:font-[500] pl-[8px]' placeholder='Grams' />
                                 </div>
                             </div>
                             <div className='w-[50%] mt-[0.9375em] flex items-center gap-[0.375em]'>
@@ -236,12 +248,12 @@ const EditList = () => {
                         <div className='w-[50%] pr-[0.625em] mt-[0.9375em] flex items-center'>
                             <input name='startingPrice'
                                 value={inputValues.startingPrice}
-                                onChange={handleOptionalChange} type="number" min={0} className='w-full text-[0.75em] h-[1.938em] placeholder:font-[700] pl-[0.4375em] border-[1px] font-sans border-[#595959] rounded-[2px]' placeholder={inputValues.priceType === 'auction' ? `Starting Price (Kr)` : "Price"} />
+                                onChange={handleOptionalChange} type="number" min={0} className='w-full text-[0.75em] h-[1.938em] placeholder:font-[500] pl-[0.4375em] border-[1px] font-sans border-[#595959] rounded-[2px]' placeholder={inputValues.priceType === 'auction' ? `Starting Price (Kr)` : "Price"} />
                         </div>
                         <div className='w-[50%] justify-start mt-[0.9375em] flex flex-col items-start'>
                             <input name='minPrice'
                                 value={inputValues.minPrice}
-                                onChange={handleOptionalChange} type="number" min={0} className={`w-full text-[0.75em] placeholder:font-[700] pl-[0.4375em] border-[1px] font-sans border-[#595959] h-[1.938em] rounded-[2px] ${inputValues.priceType !== 'auction' ? 'hidden' : ''}`} placeholder={`Min Price (Kr)`} />
+                                onChange={handleOptionalChange} type="number" min={0} className={`w-full text-[0.75em] placeholder:font-[500] pl-[0.4375em] border-[1px] font-sans border-[#595959] h-[1.938em] rounded-[2px] ${inputValues.priceType !== 'auction' ? 'hidden' : ''}`} placeholder={`Min Price (Kr)`} />
                             <p className={`font-[400] text-[.6em] mt-[.2em] text-[#AAAAAA] text-left ${inputValues.priceType !== 'auction' ? 'hidden' : ''}`}>5 Kr min price</p>
                         </div>
                     </div>
