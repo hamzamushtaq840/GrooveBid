@@ -247,7 +247,11 @@ option:first-child {
 
 .css-hlgwow {
   padding: 2px 5px !important;
-  margin-top: -13px !important;
+  margin-top: -6px !important;
+}
+
+.css-1wy0on6 {
+  margin-top: -7px !important;
 }
 
 @media screen and (min-width: 767px) {
@@ -279,6 +283,12 @@ option:first-child {
 
   .css-hlgwow {
     padding: 2px 5px !important;
-    margin-top: -8px !important;
+    margin-bottom: 1px !important;
+    margin-top: 0px !important;
   }
+
+  .css-1wy0on6 {
+    margin-top: -5px !important;
+  }
+
 }
