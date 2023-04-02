@@ -245,6 +245,11 @@ option:first-child {
   padding: 10px 10px;
 }
 
+.css-hlgwow {
+  padding: 2px 5px !important;
+  margin-top: -13px !important;
+}
+
 @media screen and (min-width: 767px) {
 
   .css-13cymwt-control {
@@ -270,5 +275,10 @@ option:first-child {
 
   .css-4xgw5l-IndicatorsContainer2 {
     margin-top: -5px;
+  }
+
+  .css-hlgwow {
+    padding: 2px 5px !important;
+    margin-top: -8px !important;
   }
 }
